@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="report_invoice_willmantech">
+    <t t-call="web.external_layout">
+      <t t-set="doc" t-value="doc"/>
+      <div class="page">
+        <h2>Factura WillmanTech S.L.</h2>
+
+        <div class="row">
+          <div class="col-6">
+            <strong>Número de factura:</strong>
+            <span t-field="doc.name"/>
+          </div>
+          <div class="col-6">
+            <strong>Fecha de emisión:</strong>
+            <span t-field="doc.invoice_date or doc.date"/>
+          </div>
+        </div>
+
+        <div class="row mt16">
+          <div class="col-12">
+            <strong>Cliente:</strong>
+            <span t-field="doc.partner_id.name"/>
+          </div>
+        </div>
+
+        <table class="table table-sm mt16">
+          <thead>
+            <tr>
+              <th>Descripción</th>
+              <th>Cantidad</th>
+              <th>Precio unitario</th>
+              <t t-if="doc.invoice_line_ids.filtered('discount')">
+                <th>Descuento (%)</th>
+              </t>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <t t-foreach="doc.invoice_line_ids" t-as="line">
+              <tr>
+                <td>
+                  <span t-field="line.name"/>
+                </td>
+                <td class="text-right">
+                  <span t-field="line.quantity"/>
+                </td>
+                <td class="text-right">
+                  <span t-field="line.price_unit"/>
+                </td>
+                <t t-if="doc.invoice_line_ids.filtered('discount')">
+                  <td class="text-right">
+                    <span t-field="line.discount"/>
+                  </td>
+                </t>
+                <td class="text-right">
+                  <span t-field="line.price_subtotal"/>
+                </td>
+              </tr>
+            </t>
+          </tbody>
+        </table>
+
+        <div class="row mt16">
+          <div class="col-8"/>
+          <div class="col-4">
+            <table class="table table-sm">
+              <tr>
+                <th>Total neto</th>
+                <td class="text-right">
+                  <span t-field="doc.amount_untaxed"/>
+                </td>
+              </tr>
+              <tr>
+                <th>Impuestos</th>
+                <td class="text-right">
+                  <span t-field="doc.amount_tax"/>
+                </td>
+              </tr>
+              <tr>
+                <th>Total factura</th>
+                <td class="text-right">
+                  <span t-field="doc.amount_total"/>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </t>
+  </template>
+</odoo>
