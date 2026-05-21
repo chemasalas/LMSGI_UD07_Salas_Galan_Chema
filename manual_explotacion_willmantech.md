@@ -57,7 +57,7 @@ Hay que poner estos dos comandos
 
 -docker compose up -d
 
-##Seguridad y Control de Acceso
+## Seguridad y Control de Acceso
 
 El ERP utiliza roles para controlar el acceso:
 
