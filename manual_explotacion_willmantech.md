@@ -39,14 +39,45 @@ Principalmente nosotros hemos acyivado y utilizado los moduls de clientes, venta
 <img width="715" height="731" alt="image" src="https://github.com/user-attachments/assets/92bd9cbe-35ff-4c26-9160-d2e7c511c7ff" />
 
 
-Instalación inicial
+**Instalación inicial**
 
-Descargar el proyecto.
+-Descargar el proyecto.
 
-Ejecutar el comando para arrancar el sistema:
+-Ejecutar el comando para arrancar el sistema (en la terminal de vscode):
 
-docker compose up -d
-
-(en la terminal de vscode)
+  docker compose up -d
 
 Y para abrir el ERP en el navegador deveremos poner localhost: y el puerto que pona en el mysql
+
+**Reinstalación**
+
+Hay que poner estos dos comandos 
+
+-docker compose down
+
+-docker compose up -d
+
+##Seguridad y Control de Acceso
+
+El ERP utiliza roles para controlar el acceso:
+
+Administrador: acceso total
+
+Contable: facturas y datos económicos
+
+Comercial: clientes y ventas
+
+Contraseñas
+Mínimo 10 caracteres
+
+Deben incluir mayúsculas, minúsculas, números y símbolos
+
+Recomendable cambiarlas cada 90 días
+
+Privilegios
+Comerciales: no pueden modificar facturas validadas
+
+Contables: no pueden borrar clientes
+
+Administradores: gestionan permisos
+
