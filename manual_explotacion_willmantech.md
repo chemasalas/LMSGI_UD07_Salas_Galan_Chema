@@ -83,3 +83,40 @@ Contables: no pueden borrar clientes
 
 Administradores: gestionan permisos
 
+## Procedimiento de Backup y Restauración
+
+### Backup
+
+docker exec -t erp-db pg_dump -U erp_admin erp > backup.sql
+
+### Restauración
+
+cat backup.sql | docker exec -i erp-db psql -U erp_admin erp
+
+## Flujo Operativo de Facturación e Informes
+
+### Crear una factura
+
+1. Entrar en Ventas
+
+2. Crear un pedido
+
+3. Validarlo
+
+4. Pulsar “Crear factura”
+
+5. Confirmarla
+
+### Cómo se genera el PDF
+
+El proceso interno es:
+
+1. El ERP usa la plantilla XML creada por el desarrollador
+
+2. La convierte en HTML
+
+3. Un programa llamado wkhtmltopdf transforma ese HTML en PDF
+
+4. El usuario descarga el archivo
+
+
