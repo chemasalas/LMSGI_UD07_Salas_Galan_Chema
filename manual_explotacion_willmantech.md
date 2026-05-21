@@ -9,7 +9,7 @@ El ERP está formado por:
 
 3. **Un sistema de plantillas que genera los informes en PDF.**
 
-**Arquitectura general**
+### Arquitectura general
 
 El sistema funciona con contenedores Docker, que son como “cajas” separadas:
 
@@ -25,7 +25,7 @@ Principalmente nosotros hemos acyivado y utilizado los moduls de clientes, venta
 
 ## Guía de Instalación y Reinstalación
 
-**Requisitos básicos**
+### Requisitos básicos
 
 -Tener Docker instalado.
 
@@ -39,7 +39,7 @@ Principalmente nosotros hemos acyivado y utilizado los moduls de clientes, venta
 <img width="715" height="731" alt="image" src="https://github.com/user-attachments/assets/92bd9cbe-35ff-4c26-9160-d2e7c511c7ff" />
 
 
-**Instalación inicial**
+### Instalación inicial
 
 -Descargar el proyecto.
 
@@ -49,7 +49,7 @@ Principalmente nosotros hemos acyivado y utilizado los moduls de clientes, venta
 
 Y para abrir el ERP en el navegador deveremos poner localhost: y el puerto que pona en el mysql
 
-**Reinstalación**
+### Reinstalación
 
 Hay que poner estos dos comandos 
 
@@ -61,20 +61,22 @@ Hay que poner estos dos comandos
 
 El ERP utiliza roles para controlar el acceso:
 
-Administrador: acceso total
+1. Administrador: acceso total
 
-Contable: facturas y datos económicos
+2. Contable: facturas y datos económicos
 
-Comercial: clientes y ventas
+3. Comercial: clientes y ventas
 
-Contraseñas
+### Contraseñas
+
 Mínimo 10 caracteres
 
 Deben incluir mayúsculas, minúsculas, números y símbolos
 
 Recomendable cambiarlas cada 90 días
 
-Privilegios
+### Privilegios
+
 Comerciales: no pueden modificar facturas validadas
 
 Contables: no pueden borrar clientes
