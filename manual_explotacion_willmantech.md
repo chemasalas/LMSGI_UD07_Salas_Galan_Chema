@@ -3,11 +3,11 @@ Este manual explica cómo funciona el ERP, cómo se instala, cómo se mantiene y
 
 El ERP está formado por:
 
-1. **Un servidor donde se ejecuta la aplicación.
+1. **Un servidor donde se ejecuta la aplicación.**
 
-2. **Una base de datos donde se guardan clientes, facturas y ventas.
+2. **Una base de datos donde se guardan clientes, facturas y ventas.**
 
-3. **Un sistema de plantillas que genera los informes en PDF.
+3. **Un sistema de plantillas que genera los informes en PDF.**
 
 **Arquitectura general**
 
